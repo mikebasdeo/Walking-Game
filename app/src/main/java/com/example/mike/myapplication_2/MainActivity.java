@@ -11,17 +11,24 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+//attempt at saving data 1
 import java.io.FileOutputStream;
+import android.util.Log;
+
+
+
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     String appTitle = "Dog Counter";
     TextView scoreMike;
     TextView scoreLorena;
     String FILENAME = "dog_scores";
 
-    //Attempt at saving data
+    //custom log information
+    private static final String TAG = "mikesMessage";
 
 
 
@@ -68,7 +75,67 @@ public class MainActivity extends AppCompatActivity {
                                        }
                                    }
         );
+
+        //Display Log info
+        Log.i(TAG,"onCreate");
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart");
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume");
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause");
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop");
+    }
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart");
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy");
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(TAG, "onSaveInstanceState");
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i(TAG, "onRestoreInstanceState");
+    }
+
 
 
     @Override
